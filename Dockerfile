@@ -1,4 +1,4 @@
-FROM httpd
-COPY  index.html /var/www/html
-COPY dog.jpg /var/www/html
+FROM caddy
+COPY index.html /usr/share/caddy/index.html
+COPY dog.jpg /usr/share/caddy/dog.jpg
 
