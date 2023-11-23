@@ -1,2 +1,2 @@
 FROM caddy
-COPY dog.png /var/www/html
+COPY dog.jpg /var/www/html
