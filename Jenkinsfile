@@ -9,10 +9,8 @@ pipeline{
         }
         stage ('docker image'){
             steps {
-                sh ""
-                  docker image build -t rr .
-                  docker container run -d -P rr
-                  ""
+                sh "docker image build -t rr ."
+                sh "docker container run -d -P rr"
             }
         }
     }
