@@ -1,4 +1,4 @@
 FROM httpd
 COPY  index.html /var/www/html
-COPY dog.jpg /var/www/html/dog.jpg
+COPY dog.jpg /var/www/html
 
