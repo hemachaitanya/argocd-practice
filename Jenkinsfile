@@ -9,6 +9,7 @@ pipeline{
         }
         stage ('docker image'){
             steps {
+                sh "cd /var/lib/jenkins/workspace/dock"
                 sh "docker image build -t rr ."
                 sh "docker container run -d -P rr"
             }
