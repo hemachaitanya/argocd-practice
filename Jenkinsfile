@@ -9,11 +9,10 @@ pipeline{
         }
         stage ('docker image'){
             steps {
-                sh """
-                  cd argocd-practice
+                sh ""
                   docker imaage build -t rr .
                   docker container run -d -P rr
-                  """
+                  ""
             }
         }
     }
