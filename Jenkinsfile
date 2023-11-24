@@ -18,8 +18,8 @@ pipeline{
         }
         stage ('cotainer registry'){
             steps{
-                sh "docker image tag  rr hema789/deploy:v1.0"
-                sh "docker image push hema789/deploy:v1.0"  
+                sh "docker image tag  rr hema789/deploy:rr"
+                sh "docker image push hema789/deploy:rr"  
             }
         }
     }
