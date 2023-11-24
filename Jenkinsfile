@@ -12,7 +12,7 @@ pipeline{
                 sh "cd /var/lib/jenkins/workspace/dockerpipeline"
                 sh "sudo chmod 777 /var/run/docker.sock"
                 sh "docker image build -t rr:v1.0 ."
-                sh "docker container run -d -P rr"
+                sh "docker container run -d -P rr:v1.0"
                 sh "docker container ls"
             }
         }
