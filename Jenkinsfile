@@ -11,15 +11,15 @@ pipeline{
             steps {
                 sh "cd /var/lib/jenkins/workspace/dockerpipeline"
                 sh "sudo chmod 777 /var/run/docker.sock"
-                sh "docker image build -t rr ."
+                sh "docker image build -t rr:v1.0 ."
                 sh "docker container run -d -P rr"
                 sh "docker container ls"
             }
         }
         stage ('cotainer registry'){
             steps{
-                sh "docker image tag  rr hema789/deploy:rr"
-                sh "docker image push hema789/deploy:rr"  
+                sh "docker image tag  rr:v1.0 hema789/deploy:v1.0"
+                sh "docker image push hema789/deploy:v1.0"  
             }
         }
     }
