@@ -9,6 +9,8 @@ pipeline{
         }
         stage ('docker image'){
             steps {
+                sh "docker container ls -f $(docker container ls -a -q)"
+                sh "docker image ls -f $(docker image ls -a -q)"
                 sh "cd /var/lib/jenkins/workspace/dockerpipeline"
                 sh "sudo chmod 777 /var/run/docker.sock"
                 sh "docker image build -t rr:v1.0 ."
