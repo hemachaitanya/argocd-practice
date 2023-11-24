@@ -16,6 +16,7 @@ pipeline{
                 sh "docker image build -t rr:v1.0 ."
                 sh "docker container run -d -P rr:v1.0"
                 sh "docker container ls"
+                sh "docker --version"
             }
         }
         stage ('cotainer registry'){
