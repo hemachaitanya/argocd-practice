@@ -25,6 +25,9 @@ pipeline{
         }
         stage('kube'){
             steps{
+                sh "curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.27.7/2023-11-14/bin/linux/amd64/kubectl"
+                sh "chmod +x ./kubectl"
+                sh "mkdir -p $HOME/bin && cp ./kubectl $HOME/bin/kubectl && export PATH=$HOME/bin:$PATH"
                 sh "kubectl apply -f deploy.yaml"
                 sh "kubectl get po"
             }
