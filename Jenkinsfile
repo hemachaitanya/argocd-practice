@@ -23,5 +23,11 @@ pipeline{
                 sh "docker image push hema789/deploy:v1.0"  
             }
         }
+        stage('kube'){
+            steps{
+                sh "kubectl apply -f deploy.yaml"
+                sh "kubectl get po"
+            }
+        }
     }
 }
