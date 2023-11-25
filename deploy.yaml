@@ -2,9 +2,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: Deploy-app
+  name: eployapp
   labels:
-    app:caddy
+    app: caddy
 spec:
   minReadySeconds: 5
   replicas: 1
@@ -17,11 +17,10 @@ spec:
       maxUnavailable: 30%
   template: 
     metadata: 
-      name: Deploy-app
+      name: eployapp
       labels:
         app: caddy 
     spec: 
-      activeDeadlineSeconds: 5
       containers: 
         - name: caddy
           image: hema789/deploy:v1.0
