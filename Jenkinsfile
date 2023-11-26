@@ -17,13 +17,6 @@ pipeline{
                 sh "docker --version"
             }
         }
-        stage ('cotainer registry'){
-            steps{
-                withDockerRegistry(credentialsId: 'docker', url: 'https://hub.docker.com/repository/docker/hema789/argocdrepo/general') {
-    // some block
-            }
-        }
-     }
         stage('dockerpush'){
             steps{
                 sh "docker image tag  argo:v1.0 hema789/argocdrepo:v1.0"
