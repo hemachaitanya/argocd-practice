@@ -11,8 +11,8 @@ pipeline{
         stage ('docker image'){
             steps {
                 sh "cd /var/lib/jenkins/workspace/dockerimage"
-                sh "docker image build -t argo:v1.0 ."
-                sh "docker container run -d -P argo:v1.0"
+                sh "docker image build -t babool:$BUILD_ID ."
+                sh "docker container run -d -P babool:$BUILD_ID"
                 sh "docker image ls"
                 sh "docker container ls"
                 sh "docker --version"
@@ -20,8 +20,8 @@ pipeline{
         }
         stage('dockerpush'){
             steps{
-                sh "docker image tag  argo:v1.0 hema789/argocdrepo:v1.0"
-                sh "docker image push hema789/argocdrepo:v1.0"  
+                sh "docker image tag babool:$BUILD_ID hema789/argocdrepo:$BUILD_ID"
+                sh "docker image push hema789/argocdrepo:$BUILD_ID"  
             }
         }
     }
