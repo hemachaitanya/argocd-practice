@@ -23,7 +23,7 @@ spec:
     spec: 
       containers: 
         - name: caddy
-          image: hema789/deploy:v1.0
+          image: hema789/argocdrepo:9
           ports:
             - name: caddy
               containerPort: 80
