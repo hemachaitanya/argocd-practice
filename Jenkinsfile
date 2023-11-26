@@ -13,6 +13,7 @@ pipeline{
                 sh "cd /var/lib/jenkins/workspace/dockerimage"
                 sh "docker image build -t argo:v1.0 ."
                 sh "docker container run -d -P argo:v1.0"
+                sh "docker image ls"
                 sh "docker container ls"
                 sh "docker --version"
             }
