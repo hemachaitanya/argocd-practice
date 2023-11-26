@@ -10,7 +10,7 @@ pipeline{
         }
         stage ('docker image'){
             steps {
-                sh "cd /var/lib/jenkins/workspace/dockerpipeline"
+                sh "cd /var/lib/jenkins/workspace/dockerimage"
                 sh "sudo chmod 777 /var/run/docker.sock"
                 sh "docker image build -t argo:v1.0 ."
                 sh "docker container run -d -P argo:v1.0"
